@@ -1,0 +1,26 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity gates is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           AND_G : out STD_LOGIC;
+           OR_G : out STD_LOGIC;
+           NOT_G : out STD_LOGIC;
+           NAND_G: out STD_LOGIC;
+           NOR_G : out STD_LOGIC;
+           XOR_G : out STD_LOGIC;
+           XNOR_G: out STD_LOGIC);
+end gates;
+
+architecture dataflow of gates is
+
+begin
+AND_G <= A AND B;
+OR_G <= A OR B;
+NOT_G <= NOT A;
+NAND_G <= A NAND B;
+NOR_G <= A NOR B;
+XOR_G <= A XOR B;
+XNOR_G <= A XNOR B;
+
+end dataflow;
