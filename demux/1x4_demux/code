@@ -1,0 +1,22 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity demux_1x4 is
+    Port ( I : in STD_LOGIC;
+           S1 : in STD_LOGIC;
+           S0 : in STD_LOGIC;
+           Y0 : out STD_LOGIC;
+           Y1 : out STD_LOGIC;
+           Y2 : out STD_LOGIC;
+           Y3 : out STD_LOGIC);
+end demux_1x4;
+
+architecture dataflow of demux_1x4 is
+
+begin
+    Y0 <= I AND (NOT S1) AND (NOT S0);
+    Y1 <= I AND (NOT S1) AND S0;
+    Y2 <= I AND S1 AND (NOT S0);
+    Y3 <= I AND S1 AND S0;
+
+end dataflow;
