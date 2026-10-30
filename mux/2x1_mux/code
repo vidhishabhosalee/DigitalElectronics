@@ -1,0 +1,16 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity mux_2x1 is
+    Port ( I0 : in STD_LOGIC;
+           I1 : in STD_LOGIC;
+           S : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end mux_2x1;
+
+architecture dataflow of mux_2x1 is
+
+begin
+    Y <= (I0 and (not S)) or (I1 and S);
+
+end Dataflow;
