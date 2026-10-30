@@ -1,0 +1,20 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity encoder_4x2 is
+    Port ( D0 : in STD_LOGIC;
+           D1 : in STD_LOGIC;
+           D2 : in STD_LOGIC;
+           D3 : in STD_LOGIC;
+           Y0 : out STD_LOGIC;
+           Y1 : out STD_LOGIC);
+end encoder_4x2;
+
+architecture dataflow of encoder_4x2 is
+
+begin
+
+    Y0 <= (D1 OR D3) AND (D0 OR NOT D0);
+    Y1 <= (D2 OR D3) AND (D0 OR NOT D0);
+
+end dataflow;
