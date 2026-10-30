@@ -1,0 +1,22 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity decoder_2x4 is
+    Port ( A0 : in STD_LOGIC;
+           A1 : in STD_LOGIC;
+           Y0 : out STD_LOGIC;
+           Y1 : out STD_LOGIC;
+           Y2 : out STD_LOGIC;
+           Y3 : out STD_LOGIC);
+end decoder_2x4;
+
+architecture dataflow of decoder_2x4 is
+
+begin
+
+    Y0 <= (NOT A1) AND (NOT A0);
+    Y1 <= (NOT A1) AND A0;
+    Y2 <= A1 AND (NOT A0);
+    Y3 <= A1 AND A0;
+
+end dataflow;
