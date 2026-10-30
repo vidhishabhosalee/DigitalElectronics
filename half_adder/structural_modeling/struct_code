@@ -1,0 +1,27 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity Half_adder1 is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Sum : out STD_LOGIC;
+           Carry : out STD_LOGIC);
+end Half_adder1;
+
+architecture Structural of Half_adder1 is
+component xor_gate
+    Port(x : in STD_LOGIC;
+         y : in STD_LOGIC;
+         z : out STD_LOGIC);
+end component;
+
+component and_gate
+    Port(p : in STD_LOGIC;
+         q : in STD_LOGIC;
+         r : out STD_LOGIC);
+end component;
+
+begin
+U1: xor_gate port map(A, B, Sum);
+U2: and_gate port map(A, B, Carry);
+
+end Structural;
